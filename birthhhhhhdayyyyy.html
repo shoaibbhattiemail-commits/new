@@ -1,0 +1,526 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f5a5cf">
+<title>Happy Birthday Aqsa ❤️</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Georgia, serif;
+  background: linear-gradient(145deg,#fbc2eb,#d8b4fe,#fce7f3);
+  color: white;
+  text-align: center;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+.page {
+  display: none;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: 35px 18px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  animation: fade .8s ease;
+}
+
+.page.active { display: flex; }
+
+@keyframes fade {
+  from {opacity:0; transform:translateY(15px)}
+  to {opacity:1; transform:translateY(0)}
+}
+
+h1 {
+  font-size: clamp(30px,8vw,52px);
+  margin: 14px 0;
+  text-shadow: 0 0 15px #db2777;
+}
+
+h2 {
+  font-size: clamp(20px,5vw,29px);
+  margin: 12px;
+}
+
+p {
+  max-width: 600px;
+  font-size: clamp(15px,4vw,18px);
+  line-height: 1.8;
+  margin: 14px auto;
+}
+
+button {
+  background: #ec4899;
+  color: white;
+  border: 0;
+  border-radius: 40px;
+  padding: 15px 25px;
+  margin: 14px 5px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  max-width: 100%;
+  box-shadow: 0 5px 20px #83184355;
+}
+
+button:active { transform: scale(.96); }
+
+.heart {
+  font-size: 65px;
+  animation: beat 1s infinite;
+}
+
+@keyframes beat {
+  50% {transform:scale(1.25)}
+}
+
+/* Floating hearts */
+.float {
+  position: fixed;
+  bottom: -40px;
+  pointer-events: none;
+  z-index: 20;
+  animation: rise 7s linear forwards;
+}
+
+@keyframes rise {
+  to {
+    transform:translateY(-110vh) rotate(360deg);
+    opacity:0;
+  }
+}
+
+/* Music */
+.music-box {
+  background:#ffffff45;
+  border-radius:20px;
+  padding:18px;
+  margin:15px;
+  width:min(100%,350px);
+}
+
+input {
+  max-width:100%;
+  margin:12px;
+}
+
+/* Pictures */
+.gallery {
+  width:100%;
+  max-width:850px;
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+  margin:25px auto;
+}
+
+.photo {
+  background:white;
+  padding:7px;
+  border-radius:17px;
+  color:#be185d;
+  box-shadow:0 5px 20px #83184355;
+  overflow:hidden;
+}
+
+.photo img {
+  width:100%;
+  height:270px;
+  object-fit:cover;
+  object-position:center;
+  display:block;
+  border-radius:12px;
+}
+
+.photo p {
+  font-size:14px;
+  font-weight:bold;
+  margin:10px 2px;
+}
+
+/* Cake */
+.cake {
+  width:230px;
+  margin:75px auto 30px;
+  position:relative;
+}
+
+.layer {
+  height:55px;
+  background:linear-gradient(#f9a8d4,#db2777);
+  border:3px solid white;
+  border-radius:12px;
+}
+
+.top {
+  width:160px;
+  margin:auto;
+  background:#fce7f3;
+  color:#be185d;
+  padding:13px;
+  font-weight:bold;
+}
+
+.middle {width:195px;margin:auto}
+.bottom {width:230px}
+
+.candle {
+  position:absolute;
+  top:-55px;
+  left:50%;
+  transform:translateX(-50%);
+  height:50px;
+  width:13px;
+  background:repeating-linear-gradient(45deg,white,white 5px,#ec4899 5px,#ec4899 10px);
+}
+
+.flame {
+  position:absolute;
+  top:-25px;
+  left:-3px;
+  width:19px;
+  height:25px;
+  border-radius:50%;
+  background:orange;
+  box-shadow:0 0 20px yellow;
+  animation:flicker .3s infinite alternate;
+}
+
+@keyframes flicker {
+  to {transform:scale(.8)}
+}
+
+.blown .flame {display:none}
+#cakeMessage {display:none}
+
+/* Final letter */
+.letter {
+  background:#ffffff40;
+  border:1px solid #ffffff80;
+  border-radius:25px;
+  padding:25px 18px;
+  width:min(100%,650px);
+  backdrop-filter:blur(10px);
+  box-shadow:0 10px 35px #83184340;
+}
+
+/* Small mobile screens */
+@media(max-width:480px) {
+  .page {padding:25px 13px}
+  .gallery {gap:9px}
+  .photo {padding:5px;border-radius:13px}
+  .photo img {height:210px}
+  button {width:min(100%,310px)}
+  .cake {transform:scale(.9);margin-top:60px}
+}
+
+/* Larger screens */
+@media(min-width:700px) {
+  .gallery {grid-template-columns:repeat(2,1fr)}
+  .photo img {height:350px}
+}
+
+</style>
+</head>
+
+<body>
+
+<audio id="music" loop></audio>
+
+<!-- 1. SURPRISE -->
+<section class="page active" id="p1">
+
+  <div class="heart">💗</div>
+
+  <h1>A Special Surprise</h1>
+
+  <h2>For My Aqsa Meri Jaan 🥹</h2>
+
+  <p>
+    Someone very special deserves something
+    beautiful today. ❤️
+
+    Are you ready for your birthday surprise,
+    my princess?
+  </p>
+
+  <div class="music-box">
+    <h3>🎵 Our Special Song</h3>
+    <p>Choose your Soch Na Sake MP3 file</p>
+    <input type="file" id="song" accept="audio/*">
+    <p id="musicStatus">Song not selected yet 💗</p>
+  </div>
+
+  <button onclick="start()">🎁 OPEN YOUR SURPRISE</button>
+
+</section>
+
+
+<!-- 2. BIRTHDAY -->
+<section class="page" id="p2">
+
+  <div class="heart">❤️</div>
+
+  <h1>Happy Birthday!</h1>
+
+  <h1>Aqsa Meri Jaan 😘</h1>
+
+  <h2>My Princess 👑</h2>
+
+  <p>
+    Happiest Birthday to the most beautiful
+    soul in my world.
+
+    Your smile is my happiness.
+    Your existence makes my world beautiful.
+
+    May Allah bless you with endless happiness,
+    success and everything your heart desires. 🤲
+
+    You are so special to me, meri jaan. 💗
+  </p>
+
+  <h2>🧸 🌹 🦋 💋 💞</h2>
+
+  <button onclick="go(3)">NEXT SURPRISE 🎂</button>
+
+</section>
+
+
+<!-- 3. CAKE -->
+<section class="page" id="p3">
+
+  <h1>Happy 19th Birthday! 🎂</h1>
+
+  <h2>Aqsa ❤️</h2>
+
+  <div class="cake" id="cake">
+
+    <div class="candle">
+      <div class="flame"></div>
+    </div>
+
+    <div class="layer top">AQSA 19 💗</div>
+    <div class="layer middle"></div>
+    <div class="layer bottom"></div>
+
+  </div>
+
+  <p>
+    Make a wish, close your eyes
+    and blow your birthday candle! 🥹
+  </p>
+
+  <button onclick="blow()">💨 BLOW CANDLE</button>
+
+  <h2 id="cakeMessage">
+    YAYYYYY! HAPPY BIRTHDAY AQSA! 🎉❤️
+  </h2>
+
+  <button onclick="go(4)">OUR MEMORIES 📸</button>
+
+</section>
+
+
+<!-- 4. YOUR PHOTOS -->
+<section class="page" id="p4">
+
+  <h1>My Beautiful Aqsa ❤️</h1>
+
+  <h2>My Favorite Person 🥹</h2>
+
+  <p>
+    Every picture of you is special.
+    Every memory is a beautiful story. 💗
+  </p>
+
+  <div class="gallery">
+
+    <div class="photo">
+      <img src="aqsa1.jpeg" alt="Aqsa in yellow dress">
+      <p>My Beautiful Princess 👑</p>
+    </div>
+
+    <div class="photo">
+      <img src="aqsa2.jpeg" alt="Aqsa memory">
+      <p>My Favorite Memory ❤️</p>
+    </div>
+
+    <div class="photo">
+      <img src="aqsa3.jpeg" alt="Aqsa portrait">
+      <p>My Cutie Pie 🧸</p>
+    </div>
+
+    <div class="photo">
+      <img src="aqsa4.jpeg" alt="Aqsa in yellow outfit">
+      <p>Forever My Favorite 🌹</p>
+    </div>
+
+  </div>
+
+  <h2>My Eyes Always Find You 💞</h2>
+
+  <button onclick="go(5)">OPEN MY LOVE LETTER 💌</button>
+
+</section>
+
+
+<!-- 5. LOVE LETTER -->
+<section class="page" id="p5">
+
+  <div class="letter">
+
+    <div class="heart">💖</div>
+
+    <h1>My Love, Aqsa</h1>
+
+    <h2>Happy Birthday Meri Jaan!</h2>
+
+    <p>
+      Today is all about you, my love.
+
+      I wish I could give you the entire world
+      because you deserve every beautiful thing.
+
+      You are my favorite thought,
+      my sweetest memory and
+      the most beautiful part of my world.
+
+      May Allah protect your smile,
+      fulfill all your dreams,
+      and fill your life with happiness.
+
+      I hope you always stay blessed,
+      keep smiling and achieve everything
+      you wish for.
+
+      Thank you for being YOU.
+
+      Happy 19th Birthday, my princess!
+
+      I LOVE YOU SO MUCH! 🥹❤️
+    </p>
+
+    <h1>FOREVER YOURS 💍</h1>
+
+    <h2>😘 💗 🧸 🌹 🦋</h2>
+
+  </div>
+
+  <button onclick="restart()">🔄 WATCH AGAIN</button>
+
+</section>
+
+
+<script>
+
+// Music selection
+const music = document.getElementById("music");
+
+document.getElementById("song").onchange = function() {
+
+  if(this.files[0]) {
+    music.src = URL.createObjectURL(this.files[0]);
+    document.getElementById("musicStatus").textContent =
+      "Your special song is ready! ❤️";
+  }
+
+};
+
+// First surprise
+function start() {
+
+  if(music.src) {
+    music.play().catch(()=>{});
+  }
+
+  go(2);
+}
+
+// Navigation
+function go(n) {
+
+  document.querySelectorAll(".page").forEach(p => {
+    p.classList.remove("active");
+  });
+
+  document.getElementById("p"+n).classList.add("active");
+
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+// Candle
+function blow() {
+
+  document.getElementById("cake").classList.add("blown");
+
+  document.getElementById("cakeMessage").style.display="block";
+
+  confetti();
+}
+
+// Floating hearts
+const emojis = ["❤️","💗","💕","🌹","🦋","😘","🥹","💖","🧸"];
+
+setInterval(() => {
+
+  const el = document.createElement("div");
+
+  el.className = "float";
+
+  el.textContent =
+    emojis[Math.floor(Math.random()*emojis.length)];
+
+  el.style.left = Math.random()*100+"vw";
+  el.style.fontSize = (20+Math.random()*20)+"px";
+
+  document.body.appendChild(el);
+
+  setTimeout(()=>el.remove(),8000);
+
+},500);
+
+// Confetti
+function confetti() {
+
+  for(let i=0;i<60;i++) {
+
+    const el = document.createElement("div");
+
+    el.className="float";
+    el.textContent=["🎉","✨","💗","🎊"][
+      Math.floor(Math.random()*4)
+    ];
+
+    el.style.left=Math.random()*100+"vw";
+    el.style.animationDuration="3s";
+
+    document.body.appendChild(el);
+
+    setTimeout(()=>el.remove(),4000);
+  }
+}
+
+// Restart
+function restart() {
+
+  document.getElementById("cake").classList.remove("blown");
+  document.getElementById("cakeMessage").style.display="none";
+
+  go(1);
+}
+
+</script>
+
+</body>
+</html>
